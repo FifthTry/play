@@ -1,0 +1,29 @@
+[package]
+name = "fifthtry-play"
+version = "0.1.0"
+authors = [
+    "amit upadhyay <amitu@fifthtry.com>"
+]
+edition = "2018"
+
+[build-dependencies]
+vergen = "3"
+
+[profile.dev]
+incremental = true
+
+[workspace]
+members = ["realm", "play"]
+
+
+[dependencies]
+encrypted_id = "0.1.5"
+failure = "0.1"
+futures = "0.1.29"
+http = "0.1.17"
+hyper = "0.12.33"
+observer = { path = "../amitu_heroku/observer/observer" }
+observer_attribute = { path = "../amitu_heroku/observer/observer_attribute" }
+realm = { path = "realm", features = ["postgres", "postgres_default"] }
+play = { path = "play" }
+sentry = "0.23.0"
